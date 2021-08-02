@@ -9,7 +9,9 @@ class DSA815(vxi11.Instrument):
         return self.ask("*IDN?")
     def set_center_frequency(self,frequency):
         self.write("SENSe:FREQuency:CENTer {}".format(frequency))
-        print("Center Frequency: ", self.ask("SENSe:FREQuency:CENTer?"))    
+    def get_center_frequency(self):
+        print("Center Frequency: ", self.ask("SENSe:FREQuency:CENTer?"))
+
 
 
 ########################################################################
@@ -18,6 +20,7 @@ class DSA815(vxi11.Instrument):
 def main():
     instrument = DSA815('172.16.0.110')
     print(instrument.get_identification())
+    
     print(instrument.ask("HCOPy:PAGE:PRINts? "))
  
 if __name__ == "__main__":
