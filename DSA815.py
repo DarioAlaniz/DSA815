@@ -1,4 +1,4 @@
-from _typeshed import Self
+#from _typeshed import Self
 import vxi11
 import unittest
 
@@ -11,7 +11,10 @@ class DSA815(vxi11.Instrument):
         self.write("SENSe:FREQuency:CENTer {}".format(frequency))
     def get_center_frequency(self):
         print("Center Frequency: ", self.ask("SENSe:FREQuency:CENTer?"))
-
+    def set_span(self,frequency):
+        self.write("SENSe:FREQuency:SPAN 20000000")
+    def get_span(self):
+        print("Span Frequency: ", self.ask("SENSe:FREQuency:SPAN?"))
 
 
 ########################################################################
@@ -20,8 +23,7 @@ class DSA815(vxi11.Instrument):
 def main():
     instrument = DSA815('172.16.0.110')
     print(instrument.get_identification())
-    
-    print(instrument.ask("HCOPy:PAGE:PRINts? "))
- 
+    instrument.get_span()
+
 if __name__ == "__main__":
     main()
