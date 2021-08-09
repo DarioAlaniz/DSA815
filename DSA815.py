@@ -38,11 +38,11 @@ class DSA815(vxi11.Instrument):
 
 # if __name__ == "__main__":
 #     main()
-nombre = 'RF+IF+Q1+20dBm[0Mhz+2000Mhz]'
+nombre = 'RespuestaSplitter+Sen1+5dBm[675Mhz+1300Mhz]'
 instrument = DSA815('172.16.0.110')
 print(instrument.get_identification())
 instrument.get_trace(path='E:\Trace1',name=nombre)
-instrument.set_screen(name=nombre)
+# instrument.set_screen(name=nombre)
 
 
 
