@@ -16,14 +16,19 @@ class DSA815(vxi11.Instrument):
     def get_span(self):
         return self.ask("SENSe:FREQuency:SPAN?")
     def set_span_full(self):
+
         self.write("SENSe:FREQuency:SPAN:FULL ")
+
     def get_trace(self,n=1,name='T1',path='D'):
         self.write("MMEMory:STORe:TRACe TRACE{},{}:{}.csv".format(n,path,name))
+
     def get_trace_info(self):
         return self.ask("MMEMory:DISK:INFormation?")
     def set_screen(self,name='screen'):
         self.write("MMEMory:STORe:SCReen E:\{}.jpg".format(name))
-    
+
+    def get_ptable(self,name='pt1',path='D'):
+        self.write("MMEMory:STORe:PTAB {}:\{}.csv".format(path,name))
     
 
 ########################################################################
@@ -41,8 +46,11 @@ class DSA815(vxi11.Instrument):
 nombre = 'RespuestaSplitter+Sen1+5dBm[675Mhz+1300Mhz]'
 instrument = DSA815('172.16.0.110')
 print(instrument.get_identification())
-instrument.get_trace(path='E:\Trace1',name=nombre)
-# instrument.set_screen(name=nombre)
-
-
-
+if(0):#Trace
+    instrument.get_trace(path='E:\Trace1',name=nombre)
+if(0):#peak table
+    nombre = 'peaktable[input5dBm]'
+    instrument.get_trace(path='E',name=nombre)
+if(1):
+    nombre='ModInv+I1+RF+RespMixer[100Mhz+15dBM]'
+    instrument.set_screen(name=nombre)
