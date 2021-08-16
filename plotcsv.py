@@ -63,18 +63,18 @@ Probar con los generadores usb en modo inverso en las 2 entradas
 
 #######################################
 ##Respuesta Splitter Sen 1
-tema            = 'Respuesta_Splitter'
-value           = ['5 dBm','10 dBm','15 dBm']
-outputPort      = 'Sen1'
-numerosCsv      = 3
-path1           = "image_and_csv/csv/TRACE1:RESPUESTASPLITTER+SEN1+5DBM[675MHZ+1300MHZ].CSV"
-path2           = "image_and_csv/csv/TRACE1:RESPUESTASPLITTER+SEN1+10DBM[675MHZ+1300MHZ].CSV"
-path3           = "image_and_csv/csv/TRACE1:RESPUESTASPLITTER+SEN1+15DBM[675MHZ+1300MHZ].CSV"
+# tema            = 'Respuesta_Splitter'
+# value           = ['5 dBm','10 dBm','15 dBm']
+# outputPort      = 'Sen1'
+# numerosCsv      = 3
+# path1           = "image_and_csv/csv/TRACE1:RESPUESTASPLITTER+SEN1+5DBM[675MHZ+1300MHZ].CSV"
+# path2           = "image_and_csv/csv/TRACE1:RESPUESTASPLITTER+SEN1+10DBM[675MHZ+1300MHZ].CSV"
+# path3           = "image_and_csv/csv/TRACE1:RESPUESTASPLITTER+SEN1+15DBM[675MHZ+1300MHZ].CSV"
 
 
 #######################################
 ## Aislacion RF-IF-Io1
-tema            = 'Respuesta_Splitter'
+tema            = 'Aislacion_RF_IF'
 value           = ['10 dBm','15 dBm']
 outputPort      = 'Io1'
 numerosCsv      = 2
@@ -83,7 +83,7 @@ path2           ="image_and_csv/csv/TRACE1:RF+IF+I1+15DBM[0MHZ+2000MHZ].CSV"
 
 #######################################
 ## Aislacion RF-IF-Io2
-# tema            = 'Respuesta_Splitter'
+# tema            = 'Aislacion_RF_IF'
 # value           = ['10 dBm','15 dBm']
 # outputPort      = 'Io2'
 # numerosCsv      = 2
@@ -92,7 +92,7 @@ path2           ="image_and_csv/csv/TRACE1:RF+IF+I1+15DBM[0MHZ+2000MHZ].CSV"
 
 #######################################
 ## Aislacion RF-IF-Qo1
-# tema            = 'Respuesta_Splitter'
+# tema            = 'Aislacion_RF_IF'
 # value           = ['10 dBm','15 dBm']
 # outputPort      = 'Qo1'
 # numerosCsv      = 2
@@ -101,7 +101,7 @@ path2           ="image_and_csv/csv/TRACE1:RF+IF+I1+15DBM[0MHZ+2000MHZ].CSV"
 
 #######################################
 ## Aislacion RF-IF-Qo2
-# tema            = 'Respuesta_Splitter'
+# tema            = 'Aislacion_RF_IF'
 # value           = ['10 dBm','15 dBm']
 # outputPort      = 'Qo2'
 # numerosCsv      = 2
@@ -110,8 +110,8 @@ path2           ="image_and_csv/csv/TRACE1:RF+IF+I1+15DBM[0MHZ+2000MHZ].CSV"
 
 
 
-# paths       = [path1,path2]
-paths       = [path1,path2,path3]
+paths       = [path1,path2]
+# paths       = [path1,path2,path3]
 placa       = 'Placa1'
 tilte       ='{}_{}_{}'.format(tema,outputPort,placa)
 
