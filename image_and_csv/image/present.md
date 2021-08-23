@@ -1,3 +1,33 @@
+> # Describir conexionado, señales que estan y no estan
+> # Aislacion, en señales parasitas RF,LO (con y sin RF)
+> # Perdidas, en señales de interes IF
+> # Diferencia en path total vs dif en componentes discretos 
+
+> # Ver armonicas antes de hacer un barrido de frecuencia (las arm pueden tener mayor potencia que la señal en algun punto)
+
+-----------------------
+# Observaciones
+Para aislacion RF/IF se noto que en ciertos puentos las armonicas tenian mas potencia que que la señal de entrada RF, esto hace inviable un barrido de frecuencias para la asilacion. Si bien en algunos puntos la grafica muestra el nivel de RF, en otros muestra el nivel de las armonicas aun cuando RF se anule.
+
+Frecuencias discretas variando segun se observa el comportamiento.
+
+# Aislacion RF/IF Io1
+* imp 50 el LO
+* RF: 10dBm,13dBm
+* frec: 100, 200, 250, 500, 1000
+
+Notamos que entre 200 - 300 Mhz la señar de RF no aparece en la salida pero si sus armonicas con mayor amplitud.
+Para valores mayores a 300 empezamos a notar que la aislacion ya no era buena sino que se tiene la misma RF aumentando su amplitud a medida que crece la frecuencia.
+
+
+
+
+splitQ = -4dB
+split = -8.5dB
+
+
+----------------------------------------
+
 # Plan de mediciones FIADC
 ---------------------------------
 ## Instrumental:
@@ -14,8 +44,8 @@
 ## Mediciones en funcionamiento directo.
 -------------------------------------------------
 
-### Aislacion LO/FI (Placa1).
-Se analizo la aislacion entre el LO y las salidas FI.
+### Aislacion LO/IF (Placa1).
+Se analizo la aislacion entre el LO y las salidas IF.
 
 #### Set-up:
 
@@ -26,7 +56,7 @@ Se analizo la aislacion entre el LO y las salidas FI.
 
 * RIGOL-DSA815.
 
-Se ingreso 1GHz en el LO y se obtuvo la tabla de armonicas para las salidas, con diferentes potencias del LO. 
+Se ingreso 1GHz en el LO y se obtuvo la tabla de armonicas para las salidas, con diferentes potencias del LO. (impedacia de 50 en RF)
 
 "imagenes de armonicas"
 
@@ -46,13 +76,13 @@ Luego se realizo un barrido en frecuencias para el LO y se obtuvieron las respue
 
 ----------------------------------------------
 
-## Aislacion RF/FI (Placa1)
+## Aislacion RF/IF (Placa1)
 -------------------------------
 
 ### Set-up
 
 * HP-8350B: 
-* * frec: 500MHz - 1.5GHz.
+* * frec: 0GHz - 1.5GHz.
 * * time: 10ms.
 * * pwr: 10/15/20dBm (rehacer para 5/10/15) 
 
