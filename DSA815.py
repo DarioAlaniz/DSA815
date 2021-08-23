@@ -43,14 +43,14 @@ class DSA815(vxi11.Instrument):
 
 # if __name__ == "__main__":
 #     main()
-nombre = 'RespuestaSplitter+Sen1+5dBm[675Mhz+1300Mhz]'
+nombre = 'Aislacion+RF+IF+Io1[100Mhz+10dBM]'
 instrument = DSA815('172.16.0.110')
 print(instrument.get_identification())
-if(0):#Trace
+if(1):#Trace
     instrument.get_trace(path='E:\Trace1',name=nombre)
 if(0):#peak table
     nombre = 'peaktable[input5dBm]'
     instrument.get_trace(path='E',name=nombre)
-if(1):
-    nombre='ModInv+I1+RF+RespMixer[100Mhz+15dBM]'
+if(0):
+    nombre='Aislacion+RF+IF+Io1[100Mhz+13dBM]'
     instrument.set_screen(name=nombre)
