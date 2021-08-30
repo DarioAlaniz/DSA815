@@ -48,8 +48,9 @@ instrument = DSA815('172.16.0.110')
 print("Conectado a : "+instrument.get_identification())
 print("Obteniendo Resultados.....")
 if(1):#Trace
-    nombre      = 'aislacion+Rf+If+Q1+10DMB+[500Mhz+1500Mhz]'
-    numTrace    = 1
+    nombre      = 'AISLACION+RF+IF+Q2+13DMB+[500MHZ+1500MHZ]'
+    # nombre      ="AISLACION+RF+IF+Q2+13DMB+ARMONICOS+CON+IN1000MHZ"
+    numTrace    = 3
     instrument.get_trace(path='E:\Trace{}'.format(numTrace),name=nombre,n=numTrace)
 if(0):#peak table
     nombre = 'peaktable[input5dBm]'

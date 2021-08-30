@@ -13,8 +13,10 @@ Para ver la asilacion se hizo --» abs(salida - entradaAlMixer); entradaAlMixer 
 _________Aclaraciones:
 No se tiene los .cv de 20dBm por que el generador no garantizaba salida cte con 20dBm para todas las frecuencias
 _________Tareas:
-Graficar RF-FI
+Graficar RF-FI con los nuevos datos extraidos
 Probar con los generadores usb en modo inverso en las 2 entradas
+Consultar a lean, sobre los armonicos como armar los plots
+
 '''
 #######################################
 # tema          = 'Aislacion_entre_puertos_LO-IF'
@@ -71,13 +73,17 @@ Probar con los generadores usb en modo inverso en las 2 entradas
 
 #######################################################################################
 tema            = 'Aislacion_RF_IF'
-############ Aislacion RF-IF-Io1 Errores
-# value           = ['13 dBm']
-# outputPort      = 'Io1'
-# numerosCsv      = 3
-# path1           ="image_and_csv/csv/RF_IF/TRACE1:AISLACION+RF+IF+I1+RESPUESTAERRONEA+[0MHZ+1500MHZ].CSV"
-# path2           ="image_and_csv/csv/RF_IF/TRACE1:AISLACION+RF+IF+I1+13DMB+[100MHZ+1500MHZ]+ARMONICOS+CON+IN100MHZ.CSV"
-# path3           ="image_and_csv/csv/RF_IF/TRACE1:AISLACION+RF+IF+I1+13DMB+[100MHZ+1500MHZ]+ARMONICOS+CON+IN300MHZ.CSV"
+# tema            =tema + "_Armonicos_De_Salida"
+############ Aislacion RF-IF-Io1 Armonicos
+value           = ['13 dBm']
+inFrequency     = ['100Mhz','300Mhz','400Mhz','500Mhz','1000Mhz']
+outputPort      = 'Io1'
+numerosCsv      = 5
+path1           ="image_and_csv/csv/RF_IF/TRACE1:AISLACION+RF+IF+I1+13DMB+[100MHZ+1500MHZ]+ARMONICOS+CON+IN100MHZ.CSV"
+path2           ="image_and_csv/csv/RF_IF/TRACE1:AISLACION+RF+IF+I1+13DMB+[100MHZ+1500MHZ]+ARMONICOS+CON+IN300MHZ.CSV"
+path3           ="image_and_csv/csv/RF_IF/TRACE1:AISLACION+RF+IF+I1+13DMB+[100MHZ+1500MHZ]+ARMONICOS+CON+IN400MHZ.CSV"
+path4           ="image_and_csv/csv/RF_IF/TRACE1:AISLACION+RF+IF+I1+13DMB+[100MHZ+1500MHZ]+ARMONICOS+CON+IN500MHZ.CSV"
+path5           ="image_and_csv/csv/RF_IF/TRACE1:AISLACION+RF+IF+I1+13DMB+[100MHZ+1500MHZ]+ARMONICOS+CON+IN1000MHZ.CSV"
 
 
 
@@ -99,12 +105,7 @@ tema            = 'Aislacion_RF_IF'
 
 #######################################
 ## Aislacion RF-IF-Qo1
-value           = ['0 dBm','10 dBm','15 dBm']
-outputPort      = 'Qo1'
-numerosCsv      = 3
-path1           ="image_and_csv/csv/RF_IF/TRACE1:AISLACION+RF+IF+Q1+0DMB+[500MHZ+1500MHZ].CSV"
-path2           ="image_and_csv/csv/RF_IF/TRACE2:AISLACION+RF+IF+Q1+10DMB+[500MHZ+1500MHZ].CSV"
-path3           ="image_and_csv/csv/RF_IF/TRACE3:AISLACION+RF+IF+Q1+13DMB+[500MHZ+1500MHZ].CSV"
+# 
 
 #######################################
 ## Aislacion RF-IF-Qo2
@@ -130,7 +131,8 @@ def atenuacion_Spliter(data,inputdBm):
 
 # paths         = [path1]
 # paths       = [path1,path2]
-paths       = [path1,path2,path3]
+# paths       = [path1,path2,path3]
+paths       = [path1,path2,path3,path4,path5]
 placa       = 'Placa1'
 tilte       ='{}_{}_{}'.format(tema,outputPort,placa)
 
@@ -148,14 +150,14 @@ for i in range(numerosCsv):
     ##Spliter en cuadratura 
     # atte      = atenuacion_Spliter(csv_data.get_dBm(),value[i])
     ##############
-    plt.plot(frequency,dBm,label=value[i])#'\n Atenuacion Promedio: ' + str(round(atte,3)))
+    plt.plot(frequency,dBm,label=value[0]+" "+inFrequency[i])#'\n Atenuacion Promedio: ' + str(round(atte,3)))
     # print(np.mean(np.extract(np.abs(dBm))))
     plt.legend(title='Input({}) power [dBm]'.format('LO'))
 
 
 plt.title(tilte);plt.xlabel('Frequency[Hz]');plt.ylabel('Isolation[dB]')
 plt.grid(True)
-plt.ylim(-50,0)
-# plt.xlim(1.3*10**8,1.4*10**9)
+# plt.ylim(-50,0)
+plt.xlim(50*10**6,1.5*10**9)
 # plt.savefig('/home/dario/Documentos/funda/fiMediciones/DSA815/image_and_csv/image/{}.jpg'.format(tilte))
 plt.show()
