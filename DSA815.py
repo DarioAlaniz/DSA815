@@ -43,11 +43,14 @@ class DSA815(vxi11.Instrument):
 
 # if __name__ == "__main__":
 #     main()
-nombre = 'Aislacion+RF+IF+Io1[100Mhz+10dBM]'
+# nombre = 'LO+IF+Q2+13DBM[675MHZ+1500MHZ]'
 instrument = DSA815('172.16.0.110')
-print(instrument.get_identification())
+print("Conectado a : "+instrument.get_identification())
+print("Obteniendo Resultados.....")
 if(1):#Trace
-    instrument.get_trace(path='E:\Trace1',name=nombre)
+    nombre      = 'aislacion+Rf+If+Q1+10DMB+[500Mhz+1500Mhz]'
+    numTrace    = 1
+    instrument.get_trace(path='E:\Trace{}'.format(numTrace),name=nombre,n=numTrace)
 if(0):#peak table
     nombre = 'peaktable[input5dBm]'
     instrument.get_trace(path='E',name=nombre)

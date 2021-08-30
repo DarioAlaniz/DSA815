@@ -19,43 +19,36 @@ Probar con los generadores usb en modo inverso en las 2 entradas
 #######################################
 # tema          = 'Aislacion_entre_puertos_LO-IF'
 ##########LO-IF-Io1
-# value         = ['10 dBm','15 dBm']
+# value         = ['10 dBm','13 dBm']
 # outputPort    = 'Io1'
 # numerosCsv    = 2
 # path1         = "image_and_csv/csv/TRACE1:LO+IF+10DBM[500MHZ+1500MHZ].CSV"
-# path2         = "image_and_csv/csv/TRACE1:LO+IF+15DBM[500MHZ+1500MHZ].CSV"
+# path2         = "image_and_csv/csv/TRACE1:LO+IF+I1+13DBM[600MHZ+1500MHZ].CSV"
 # tiltePlot     = 'Respuesta Mixer '+ outputPort
-# path3 = "image_and_csv/csv/TRACE1:LO+IF+20DBM[500MHZ+1500MHZ].CSV" 
 
 ##########LO-IF-Io2
-# value         = ['10 dBm','15 dBm']
+# value         = ['10 dBm','13 dBm']
 # outputPort    = 'Io2'
 # numerosCsv    = 2
 # path1         = "image_and_csv/csv/TRACE1:LO+IF+I2+10DBM[500MHZ+1500MHZ].CSV"
-# path2         = "image_and_csv/csv/TRACE1:LO+IF+I2+15DBM[500MHZ+1500MHZ].CSV"
+# path2         = "image_and_csv/csv/TRACE1:LO+IF+I2+13DBM[675MHZ+1500MHZ].CSV"
 # tiltePlot     = 'Respuesta Mixer '+ outputPort
-# path3 = "image_and_csv/csv/TRACE1:LO+IF+I2+20DBM[500MHZ+1500MHZ].CSV"
 
 ############LO-IF-Q1
-# value           = ['10 dBm','15 dBm']
+# value           = ['10 dBm','13 dBm']
 # outputPort      = 'Qo1'
 # numerosCsv      = 2
-# path1           = "image_and_csv/csv/TRACE1:LO+IF+Q1+10DBM[500MHZ+1500MHZ].CSV"
-# path2           = "image_and_csv/csv/TRACE1:LO+IF+Q1+15DBM[500MHZ+1500MHZ].CSV"
+# path1           = "image_and_csv/csv/TRACE1:LO+IF+Q1+10DBM[675MHZ+1500MHZ].CSV"
+# path2           = "image_and_csv/csv/TRACE1:LO+IF+Q1+13DBM[675MHZ+1500MHZ].CSV"
 # tiltePlot       = 'Respuesta Mixer '+ outputPort
 
-# path3 = "image_and_csv/csv/TRACE1:LO+IF+Q1+20DBM[500MHZ+1500MHZ].CSV"
-
-
-############LO-IF-Q2
-# value           = ['10 dBm','15 dBm']
+###########LO-IF-Q2
+# value           = ['10 dBm','13 dBm']
 # outputPort      = 'Qo2'
 # numerosCsv      = 2
-# path1           = "image_and_csv/csv/TRACE1:LO+IF+Q2+10DBM[500MHZ+1500MHZ].CSV"
-# path2           = "image_and_csv/csv/TRACE1:LO+IF+Q2+15DBM[500MHZ+1500MHZ].CSV"
+# path1           = "image_and_csv/csv/TRACE1:LO+IF+Q2+10DBM[675MHZ+1500MHZ].CSV"
+# path2           = "image_and_csv/csv/TRACE1:LO+IF+Q2+13DBM[675MHZ+1500MHZ].CSV"
 # tiltePlot       = 'Respuesta Mixer '+ outputPort
-
-# path3         = "image_and_csv/csv/TRACE1:LO+IF+Q2+20DBM[500MHZ+1500MHZ].CSV"
 
 ######################################################################################################################
 # tema            = 'Respuesta_Splitter'
@@ -78,16 +71,27 @@ Probar con los generadores usb en modo inverso en las 2 entradas
 
 #######################################################################################
 tema            = 'Aislacion_RF_IF'
-############ Aislacion RF-IF-Io1
-# value           = ['10 dBm','15 dBm']
+############ Aislacion RF-IF-Io1 Errores
+# value           = ['13 dBm']
 # outputPort      = 'Io1'
-# numerosCsv      = 2
-# path1           ="image_and_csv/csv/TRACE1:RF+IF+I1+10DBM[0MHZ+2000MHZ].CSV"
-# path2           ="image_and_csv/csv/TRACE1:RF+IF+I1+15DBM[0MHZ+2000MHZ].CSV"
+# numerosCsv      = 3
+# path1           ="image_and_csv/csv/RF_IF/TRACE1:AISLACION+RF+IF+I1+RESPUESTAERRONEA+[0MHZ+1500MHZ].CSV"
+# path2           ="image_and_csv/csv/RF_IF/TRACE1:AISLACION+RF+IF+I1+13DMB+[100MHZ+1500MHZ]+ARMONICOS+CON+IN100MHZ.CSV"
+# path3           ="image_and_csv/csv/RF_IF/TRACE1:AISLACION+RF+IF+I1+13DMB+[100MHZ+1500MHZ]+ARMONICOS+CON+IN300MHZ.CSV"
+
+
+
+############ Aislacion RF-IF-Io1
+# value           = ['0 dBm','10 dBm','15 dBm']
+# outputPort      = 'Io1'
+# numerosCsv      = 3
+# path1           ="image_and_csv/csv/RF_IF/TRACE1:AISLACION+RF+IF+I1+0DMB+[500MHZ+1500MHZ].CSV"
+# path2           ="image_and_csv/csv/RF_IF/TRACE2:AISLACION+RF+IF+I1+10DMB+[500MHZ+1500MHZ].CSV"
+# path3           ="image_and_csv/csv/RF_IF/TRACE3:AISLACION+RF+IF+I1+13DMB+[500MHZ+1500MHZ].CSV"
 
 #######################################
 ############Aislacion RF-IF-Io2
-# value           = ['10 dBm','15 dBm']
+# value           = ['0 dBm','10 dBm','15 dBm']
 # outputPort      = 'Io2'
 # numerosCsv      = 2
 # path1           ="image_and_csv/csv/TRACE1:RFQ+IF+I2+10DBM[0MHZ+2000MHZ].CSV"
@@ -95,11 +99,12 @@ tema            = 'Aislacion_RF_IF'
 
 #######################################
 ## Aislacion RF-IF-Qo1
-value           = ['10 dBm','15 dBm']
+value           = ['0 dBm','10 dBm','15 dBm']
 outputPort      = 'Qo1'
-numerosCsv      = 2
-path1           ="image_and_csv/csv/TRACE1:RF+IF+Q1+10DBM[0MHZ+2000MHZ].CSV"
-path2           ="image_and_csv/csv/TRACE1:RF+IF+Q1+15DBM[0MHZ+2000MHZ].CSV"
+numerosCsv      = 3
+path1           ="image_and_csv/csv/RF_IF/TRACE1:AISLACION+RF+IF+Q1+0DMB+[500MHZ+1500MHZ].CSV"
+path2           ="image_and_csv/csv/RF_IF/TRACE2:AISLACION+RF+IF+Q1+10DMB+[500MHZ+1500MHZ].CSV"
+path3           ="image_and_csv/csv/RF_IF/TRACE3:AISLACION+RF+IF+Q1+13DMB+[500MHZ+1500MHZ].CSV"
 
 #######################################
 ## Aislacion RF-IF-Qo2
@@ -109,30 +114,40 @@ path2           ="image_and_csv/csv/TRACE1:RF+IF+Q1+15DBM[0MHZ+2000MHZ].CSV"
 # path1           ="image_and_csv/csv/TRACE1:RFQ+IF+Q2+10DBM[0MHZ+2000MHZ].CSV"
 # path2           ="image_and_csv/csv/TRACE1:RFQ+IF+Q2+10DBM[0MHZ+2000MHZ].CSV"
 
+def aislacionLo_Io(data,inputdBm):
+    inputdBmMixer   = int(inputdBm.rsplit(' ')[0]) - 8.5 - 4.0
+    return    np.abs(np.array(data) - inputdBmMixer)
 
+def aislascionRf_If(data,inputdBm):
+    inputdBmMixer   = int(inputdBm.rsplit(' ')[0]) - 8.5 #tengo solo encuenta el spliter que divide la potencia
+    result          = np.abs(np.array(data) - inputdBmMixer)
+    return np.array(result)
 
-paths       = [path1,path2]
-# paths       = [path1,path2,path3]
+def atenuacion_Spliter(data,inputdBm):
+    dBm       = int(inputdBm.rsplit(' ')[0])- np.array(data) 
+    atte      = np.mean(np.extract(np.array(dBm)<0,dBm))
+    return atte
+
+# paths         = [path1]
+# paths       = [path1,path2]
+paths       = [path1,path2,path3]
 placa       = 'Placa1'
 tilte       ='{}_{}_{}'.format(tema,outputPort,placa)
 
 plt.figure(tema)
 for i in range(numerosCsv):
-    Lo_If           = extratCSV(paths[i])
-    frequency       = Lo_If.get_frequency()
+    csv_data        = extratCSV(paths[i])
+    frequency       = csv_data.get_frequency()
     ##############
     # #Aislacion IO-IF
-    # inputdBmMixer   = int(value[i].rsplit(' ')[0]) - 8.5 - 4.0
-    # dBm             = np.abs(np.array(Lo_If.get_dBm()) - inputdBmMixer)
+    # dBm             =aislacionLo_Io(csv_data.get_dBm(),value[i])
     ##############
     ##Aislacion RF-IF
-    inputdBmMixer   = int(value[i].rsplit(' ')[0]) - 8.5 #tengo solo encuenta el spliter que divide la potencia
-    dBm             = np.abs(np.array(Lo_If.get_dBm()) - inputdBmMixer)
-    # dBm               = np.array(Lo_If.get_dBm())
-    ##Spliter en cuadratura
-    # dBm       = int(value[i].rsplit(' ')[0])- np.array(Lo_If.get_dBm()) 
-    # atte      = np.mean(np.extract(np.array(dBm)<)#0,dBm))
-    ###
+    # dBm             =aislascionRf_If(csv_data.get_dBm(),value[0])
+    dBm = csv_data.get_dBm()
+    ##Spliter en cuadratura 
+    # atte      = atenuacion_Spliter(csv_data.get_dBm(),value[i])
+    ##############
     plt.plot(frequency,dBm,label=value[i])#'\n Atenuacion Promedio: ' + str(round(atte,3)))
     # print(np.mean(np.extract(np.abs(dBm))))
     plt.legend(title='Input({}) power [dBm]'.format('LO'))
@@ -140,6 +155,7 @@ for i in range(numerosCsv):
 
 plt.title(tilte);plt.xlabel('Frequency[Hz]');plt.ylabel('Isolation[dB]')
 plt.grid(True)
-plt.xlim(6*10**6,1.45*10**9)
-plt.savefig('/home/dario/Documentos/funda/fiMediciones/DSA815/image_and_csv/image/{}.jpg'.format(tilte))
+plt.ylim(-50,0)
+# plt.xlim(1.3*10**8,1.4*10**9)
+# plt.savefig('/home/dario/Documentos/funda/fiMediciones/DSA815/image_and_csv/image/{}.jpg'.format(tilte))
 plt.show()
