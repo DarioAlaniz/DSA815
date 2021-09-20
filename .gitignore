@@ -1,3 +1,8 @@
+## Ingnores locales
+**/LTspiceXVII.exe
+**/PC_USG_GUI_V1_0_0_5_E.zip
+**/USG_GUI_v1005.jar
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
