@@ -124,6 +124,19 @@ En todos los casos la aislacion baja con la frecuencia.
 ![rfif/io1](image_and_csv/image/Aislacion_RF_IF_Armonicos_De_Salida_Io1_Placa1.jpg)
 (revisar imagen)
 
+----------------------------------------------------------
+# [270921] Notamos que en el HP 83525A (barrido) existen 2 armonicas ademas de la fundamental, se filtra LO con 2 de 1GHz
+
+Para mayor seguridad filtramos una RF de .6 con filtro de .63, sin embargo se encuentra 2da arm en LO. (RF a LO) 
+
+Si RF es menor a LO al caer la aislacion del spliter en cuadratura, aparecen RF y su segunda armonica (en el mejor de los casos) que se propagan a el puerto LO de los mixers generando productos de intermodulacion que se ven en IF 
+
+DEF FREC PARA RF > 1GHz
+
+Se vio como la señal de IF vuelve a aparecer en LO (realim), por lo que LO vorveria  a modularse con IF.
+
+RF en LO, LO en RF y a la vez IF en LO
+
 -------------------------------------------------------
 -------------------------------------------------------
 
