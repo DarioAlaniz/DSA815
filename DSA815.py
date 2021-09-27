@@ -48,13 +48,13 @@ instrument = DSA815('172.16.0.110')
 print("Conectado a : "+instrument.get_identification())
 print("Obteniendo Resultados.....")
 if(1):#Trace
-    nombre      = 'AISLACION+RF+IF+Q2+13DMB+[500MHZ+1500MHZ]'
+    nombre      = 'AISLACION+I01+LO+13DBM+[100MHZ+1500MHZ]'
     # nombre      ="AISLACION+RF+IF+Q2+13DMB+ARMONICOS+CON+IN1000MHZ"
     numTrace    = 3
     instrument.get_trace(path='E:\Trace{}'.format(numTrace),name=nombre,n=numTrace)
 if(0):#peak table
-    nombre = 'peaktable[input5dBm]'
+    nombre = 'Salida_Mixer[RF100Mhz+13dBM_Lo1Ghz+13dBm]+[peaktable]'
     instrument.get_trace(path='E',name=nombre)
 if(0):
-    nombre='Aislacion+RF+IF+Io1[100Mhz+13dBM]'
+    nombre='Salida_Mixer[RF100Mhz+13dBM_Lo1Ghz+13dBm]'
     instrument.set_screen(name=nombre)
