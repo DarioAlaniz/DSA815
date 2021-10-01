@@ -124,21 +124,32 @@ En todos los casos la aislacion baja con la frecuencia.
 ![rfif/io1](image_and_csv/image/Aislacion_RF_IF_Armonicos_De_Salida_Io1_Placa1.jpg)
 (revisar imagen)
 
-----------------------------------------------------------
-# [270921] Notamos que en el HP 83525A (barrido) existen 2 armonicas ademas de la fundamental, se filtra LO con 2 de 1GHz
-
-Para mayor seguridad filtramos una RF de .6 con filtro de .63, sin embargo se encuentra 2da arm en LO. (RF a LO) 
-
-Si RF es menor a LO al caer la aislacion del spliter en cuadratura, aparecen RF y su segunda armonica (en el mejor de los casos) que se propagan a el puerto LO de los mixers generando productos de intermodulacion que se ven en IF 
-
-DEF FREC PARA RF > 1GHz
-
-Se vio como la señal de IF vuelve a aparecer en LO (realim), por lo que LO vorveria  a modularse con IF.
-
-RF en LO, LO en RF y a la vez IF en LO
-
 -------------------------------------------------------
 -------------------------------------------------------
+
+# Registro de avances
+--------------------------------
+
+# ***Registro [270921]:***
+
+> Se comenzo midiendo el generador de barrido HP 83525A, y se noto que existen 2 armonicas ademas de la fundamental para distintas frecuencias, por tanto se filtrara este generador de ahora en adelante.
+
+* Se utilizaron 2 filtros de 1GHz para el LO.
+
+* Se puso 600MHz en RF, junto con w filtros de 630MHz en el puerto, y se midio la señal que llega a LO. Se encontro que en LO esta la fundamental y la segunda armonica de RF.
+
+> Si RF es menor a LO al caer la aislacion del spliter en cuadratura, aparecen RF y su segunda armonica (en el mejor de los casos) que se propagan a el puerto LO de los mixers.
+
+* Estas armonicas al estar en uno de los puertos de entrada de los mixers ***generan productos de intermodulacion que se ven en IF*** 
+
+**POR TANTO: SE DEFINE CONDICION PARA RF > 1GHz.**
+
+* Como ultima medida se noto para varias frecuencias como la señal IF vuelve a aparecer con potencia considerable en LO (quizas generando realimentacion), por lo que IF estaria presente en ciertas componentes de LO.
+
+> RF en LO, LO en RF y a la vez IF en LO.
+
+------------------------------------------------------
+------------------------------------------------------
 
 # Data auxiliar/falta revisar
 caracterizaicion de spliters
