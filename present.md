@@ -127,6 +127,30 @@ En todos los casos la aislacion baja con la frecuencia.
 -------------------------------------------------------
 -------------------------------------------------------
 
+# Registro de avances
+--------------------------------
+
+# ***Registro del [270921]:***
+
+> Se comenzo midiendo el generador de barrido HP 83525A, y se noto que existen 2 armonicas ademas de la fundamental para distintas frecuencias, por tanto se filtrara este generador de ahora en adelante.
+
+* Se utilizaron 2 filtros de 1GHz para el LO.
+
+* Se puso 600MHz en RF, junto con 2 filtros de 630MHz en el puerto, y se midio la señal que llega a LO. Se encontro que en LO esta la fundamental y la segunda armonica de RF.
+
+> Si RF es menor a LO al caer la aislacion del spliter en cuadratura, aparecen RF y su segunda armonica (en el mejor de los casos) que se propagan a el puerto LO de los mixers.
+
+* Estas armonicas al estar en uno de los puertos de entrada de los mixers ***generan productos de intermodulacion que se ven en IF*** 
+
+**POR TANTO: SE DEFINE CONDICION PARA RF > 1GHz.**
+
+* Como ultima medida se noto para varias frecuencias como la señal IF vuelve a aparecer con potencia considerable en LO (quizas generando realimentacion), por lo que IF estaria presente en ciertas componentes de LO.
+
+> RF en LO, LO en RF y a la vez IF en LO.
+
+------------------------------------------------------
+------------------------------------------------------
+
 # Data auxiliar/falta revisar
 caracterizaicion de spliters
 
